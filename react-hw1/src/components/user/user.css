@@ -1,0 +1,11 @@
+.user-item {
+  margin-bottom: 10px;
+}
+
+.user-subitem {
+  display: inline-block;
+}
+
+.user-subitem:not(:last-child) {
+  margin-right: 20px;
+}

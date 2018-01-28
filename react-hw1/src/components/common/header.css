@@ -1,0 +1,23 @@
+header {
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: underline;
+  color: #000;
+}
+
+a:not(:last-child) {
+  margin-right: 20px;
+}
+
+a:hover {
+  text-decoration: none;
+}
