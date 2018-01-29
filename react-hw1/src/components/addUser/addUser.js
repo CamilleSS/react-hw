@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './addUser.css';
 
 class AddUser extends Component {
   constructor(props) {

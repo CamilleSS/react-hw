@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 import Header from './common/header';
 import PageContent from '../containers/pageContent/pageContent';
 import List from './list/list';
@@ -22,7 +21,6 @@ class MainPage extends Component {
       users: [...users, user],
       id: ++this.state.id
     });
-    console.log(this.state.users);
   }
 
   deleteUser(user) {
