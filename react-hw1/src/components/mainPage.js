@@ -25,10 +25,8 @@ class MainPage extends Component {
 
   deleteUser(user) {
     const users = this.state.users,
-      indexOfUser = users.find(item => {
-        return item.id === user.id;
-      }).id;
-    users.splice(indexOfUser - 1, 1);
+      indexOfUser = users.indexOf(user);
+    users.splice(indexOfUser, 1);
     this.setState({
       users
     });

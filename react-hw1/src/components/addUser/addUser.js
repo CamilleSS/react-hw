@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class AddUser extends Component {
   constructor(props) {
@@ -44,8 +45,8 @@ class AddUser extends Component {
 }
 
 AddUser.propTypes = {
-  id: React.PropTypes.number,
-  name: React.PropTypes.string
+  id: PropTypes.number,
+  name: PropTypes.string
 };
 
 export default AddUser;
