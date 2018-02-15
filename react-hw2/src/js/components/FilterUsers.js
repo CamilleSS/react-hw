@@ -22,7 +22,11 @@ class ConnectedFilterUsers extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
           <label>
-            <input type="text" ref="query" onChange={this.handleFilter}/>
+            <input
+              type="text"
+              ref="query"
+              placeholder="search"
+              onChange={this.handleFilter}/>
           </label>
       </form>
     );

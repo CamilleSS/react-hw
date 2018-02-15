@@ -41,7 +41,12 @@ class ConnectedAddUser extends Component {
       <form onSubmit={this.handleSubmit}>
         <div>
           <label>
-            <input type='text' value={name} onChange={this.handleChange} id="name"/>
+            <input
+            type="text"
+            id="name"
+            value={name}
+            placeholder="name"
+            onChange={this.handleChange}/>
           </label>
         </div>
         <button type='submit'>Add User</button>
