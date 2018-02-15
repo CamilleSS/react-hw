@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { deleteUser } from '../actions/index';
+import { deleteUser } from '../actions';
+import './User.css';
 
 const mapStateToProps = state => {
   return {stateFromReducer: state};
@@ -26,7 +27,7 @@ class ConnectedUser extends Component {
   render() {
     return (
       <li>
-        {this.props.user.id}
+        {`${this.props.user.id}. `}
         {this.props.user.name}
         <button onClick={this.delUser} value={this.props.user.id}>
           X

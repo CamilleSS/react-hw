@@ -1,4 +1,4 @@
-import {ADD_USER, DELETE_USER} from '../constants/action-types';
+import {ADD_USER, DELETE_USER, FILTER_USERS} from '../constants/action-types';
 
 const initialState = {
   users: [],
@@ -15,6 +15,13 @@ const rootReducer = (state = initialState, action) => {
       let users = [...state.users];
       users = users.filter(item => item.id !== action.user.id);
       return {...state, users};
+    case FILTER_USERS:
+      const query = action.query.toLowerCase();
+      const filteredUsers = state.users.map(item => {
+        item.visible = item.name.includes(query);
+        return item;
+      });
+      return {...state, users: filteredUsers};
     default:
       return state;
   }

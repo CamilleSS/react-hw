@@ -1,10 +1,12 @@
 import React from 'react';
 import List from './List';
-import Form from './Form';
+import AddUser from './AddUser';
+import FilterUsers from './FilterUsers';
 
 const App = () => (
   <div>
-    <Form/>
+    <AddUser id="add-user"/>
+    <FilterUsers className="filter-users"/>
     <div>
       <h2>Users</h2>
       <List/>

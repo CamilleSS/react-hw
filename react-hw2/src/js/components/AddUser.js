@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUser } from '../actions/index';
+import { addUser } from '../actions';
+import './AddUser.css';
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -8,7 +9,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-class ConnectedForm extends Component {
+class ConnectedAddUser extends Component {
   constructor() {
     super();
     this.state = {
@@ -27,8 +28,10 @@ class ConnectedForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const {name} = this.state;
-    this.props.addUser({name});
-    this.setState({name: ''});
+    if (name) {
+      this.props.addUser({name, visible: true});
+      this.setState({name: ''});
+    }
   }
 
   render() {
@@ -47,6 +50,6 @@ class ConnectedForm extends Component {
   }
 }
 
-const Form = connect(null, mapDispatchToProps)(ConnectedForm);
+const AddUser = connect(null, mapDispatchToProps)(ConnectedAddUser);
 
-export default Form;
+export default AddUser;
