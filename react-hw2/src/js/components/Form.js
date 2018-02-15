@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import uuidv1 from 'uuid';
 import { addUser } from '../actions/index';
 
 const mapDispatchToProps = dispatch => {
@@ -28,8 +27,7 @@ class ConnectedForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const {name} = this.state;
-    const id = uuidv1();
-    this.props.addUser({name, id});
+    this.props.addUser({name});
     this.setState({name: ''});
   }
 

@@ -1,17 +1,41 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { deleteUser } from '../actions/index';
 
 const mapStateToProps = state => {
-  return {users: state.users};
+  return {stateFromReducer: state};
 };
 
-const ConnectedUser = ({user}) => (
-  <li key={user.id}>
-    {user.id}
-    {user.name}
-  </li>
-);
+const mapDispatchToProps = dispatch => {
+  return {
+    deleteUser: bindActionCreators(deleteUser, dispatch)
+  }
+}
 
-const User = connect(mapStateToProps)(ConnectedUser);
+class ConnectedUser extends Component {
+  constructor() {
+    super();
+    this.delUser = this.delUser.bind(this);
+  }
+
+  delUser() {
+    this.props.deleteUser(this.props.user);
+  };
+
+  render() {
+    return (
+      <li>
+        {this.props.user.id}
+        {this.props.user.name}
+        <button onClick={this.delUser} value={this.props.user.id}>
+          X
+        </button>
+      </li>
+    );
+  }
+}
+
+const User = connect(mapStateToProps, mapDispatchToProps)(ConnectedUser);
 
 export default User;
